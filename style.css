@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.separation {
+    height: 8px;
+    background-color: #232323;
+    border: none;
+}
+
+/* Header & Hero Section */
+.main-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    padding: 25px 0;
+    position: relative;
+    z-index: 10;
+}
+
+nav .logo {
+    width: 150px;
+    filter: brightness(1.2);
+}
+
+nav .nav-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.language-btn {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #aaa;
+}
+
+.signin-btn {
+    background-color: #e50914;
+}
+
+.signin-btn:hover {
+    background-color: #f40612;
+}
+
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover { background-color: #333; }
+.language-dropdown:hover .dropdown-content { display: block; }
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-top: 100px;
+    gap: 20px;
+    width: 90%;
+    max-width: 800px;
+    animation: fadeInSlideUp 1s ease-out;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 { font-size: 3rem; font-weight: 900; line-height: 1.1; }
+.hero h4 { font-size: 1.5rem; font-weight: 400; }
+.hero p { font-size: 1.2rem; font-weight: 400; }
+
+.email-signup {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.email-signup .input-group {
+    flex: 1;
+    position: relative;
+}
+
+.email-signup input {
+    background-color: rgba(23, 23, 23, 0.7);
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+}
+
+.email-signup input:focus {
+    outline: 2px solid white;
+}
+
+.error-message {
+    color: #ffa00a;
+    font-size: 0.9rem;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    display: none;
+}
+
+input.invalid {
+    border-color: #ffa00a;
+}
+
+input.invalid + .error-message {
+    display: block;
+}
+
+.get-started-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e50914;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+.get-started-btn:hover { background-color: #f40612; }
+.get-started-btn i { margin-left: 10px; }
+
+/* Content Sections */
+.content-section {
+    padding: 50px 5%;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: none; /* Firefox */
+}
+.content-container::-webkit-scrollbar { display: none; } /* Chrome, Safari */
+
+.movie-card {
+    position: relative;
+    min-width: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+.movie-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+
+.rank {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 2px #aaa;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.reasons-section { padding: 50px 5%; }
+.reasons-section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+.reasons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.reason-card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+.reason-card:hover { transform: translateY(-10px); }
+.reason-card .icon { font-size: 3rem; margin-bottom: 20px; color: #e50914; }
+.reason-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+.reason-card p { font-size: 1rem; color: #aaa; }
+
+/* FAQ Section */
+.faq-section { padding: 50px 5%; }
+.faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { margin-bottom: 10px; }
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background-color: #303030;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-question i { transition: transform 0.3s ease; }
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #303030;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+.faq-answer p { padding: 20px; }
+.faq-item.active .faq-answer {
+    max-height: 300px; /* Adjust as needed */
+}
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
+}
+
+/* Footer */
+footer { padding: 50px 10%; color: #757575; }
+.footer-content { display: flex; flex-direction: column; gap: 30px; max-width: 1000px; margin: 0 auto; }
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+.footer-links a, footer p a { color: #757575; text-decoration: none; font-size: 0.9rem; }
+.footer-links a:hover, footer p a:hover { text-decoration: underline; }
+
+/* Modals */
+.modal {
+    display: none; position: fixed; z-index: 100; left: 0; top: 0;
+    width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8);
+    align-items: center; justify-content: center;
+}
+.modal-content {
+    background-color: #141414; margin: auto; padding: 40px; border-radius: 8px;
+    width: 90%; max-width: 450px; position: relative;
+    animation: zoomIn 0.3s;
+}
+@keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+
+.close-btn {
+    position: absolute; top: 15px; right: 25px; font-size: 28px;
+    font-weight: bold; color: #aaa; cursor: pointer;
+}
+.close-btn:hover { color: white; }
+
+.modal h2 { margin-bottom: 20px; color: white; }
+.modal input {
+    width: 100%; padding: 15px; margin: 10px 0; background-color: #333;
+    border: none; border-radius: 4px; color: white; font-size: 1rem;
+}
+.modal button {
+    width: 100%; padding: 15px; margin: 20px 0 10px; background-color: #e50914;
+    color: white; border: none; border-radius: 4px; font-weight: bold;
+    font-size: 1rem; cursor: pointer;
+}
+.form-switch { color: #757575; }
+.form-switch a { color: white; text-decoration: none; }
+.form-switch a:hover { text-decoration: underline; }
+
+/* Video Player */
+.video-player {
+    display: none; position: fixed; top: 0; left: 0; width: 100%;
+    height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 100;
+    justify-content: center; align-items: center;
+}
+.video-player video { width: 90%; max-width: 1000px; outline: none; }
+.close-video {
+    position: absolute; top: 20px; right: 30px; font-size: 30px;
+    color: white; cursor: pointer;
+}
+.netflix-icon-container {
+    border-radius: 10%; /* Adjust as needed for desired roundness */
+}
+
+.netflix-icon-container {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Adjust values for spread, blur, and color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav .logo { width: 100px; }
+    .hero h1 { font-size: 2rem; }
+    .hero h4, .hero p { font-size: 1rem; }
+    .email-signup { flex-direction: column; }
+    .get-started-btn { font-size: 1rem; padding: 12px 20px; }
+    .content-section { padding: 30px 5%; }
+    .movie-card { min-width: 150px; }
+    .reason-card { min-width: 100%; }
+}
